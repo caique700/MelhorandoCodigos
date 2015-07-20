@@ -1,0 +1,72 @@
+/*Ex. 03
+Uma empresa quer verificar se um empregado está qualificado para a aposentadoria ou não, dado
+seu código de empregado, seu ano de nascimento e o ano de seu ingresso na empresa. Para estar
+em condições, um dos seguintes requisitos deve ser satisfeito:
+- Ter no mínimo 65 anos de idade.
+- Ter trabalhado no mínimo 30 anos.
+- Ter no mínimo 60 anos e ter trabalhado no mínimo 25 anos.
+Com base nas informações acima, faça um algoritmo que deverá escrever a idade e o tempo de trabalho 
+do empregado e a mensagem 'Requerer aposentadoria' ou 'Não requerer'.*/
+
+package com.br.Empregados;
+
+import java.util.ArrayList;
+
+public class Aposentadoria {
+    private ArrayList<Empregado> empregado = new ArrayList<Empregado>();
+  
+    public Aposentadoria(){
+    	
+    }
+    
+    public Aposentadoria(Empregado empregado){
+    	setEmpregado(empregado);
+    	
+    }
+    
+	public ArrayList<Empregado> getEmpregado() {
+		return empregado;
+	}
+
+	public void setEmpregado(Empregado empregado) {
+		this.empregado.add(empregado);
+	}
+	public boolean ListaEmpregados(int iD){
+		for(Empregado empregado : getEmpregado()){
+			if(empregado.getiD() == iD){
+			    return verificaEmpregado(empregado);
+			}
+		}
+		
+		return false;
+	}
+
+	public void verificaId(int id){
+		String texto = "";
+		for(int i = 0;i < this.empregado.size();i++){
+			if(id == empregado.get(i).getiD()){
+				texto = "O id é: " + id;
+				i = this.empregado.size();
+		    }
+		}
+		if(texto == ""){
+			System.out.println("Esse id não existe,tente novamente");
+			System.exit(0);
+		}else{
+			System.out.println(texto);
+			
+		}
+		
+	}
+	
+	
+	public boolean verificaEmpregado(Empregado aposentado){
+		return aposentado.getIdade() >= 65 || aposentado.TempoDeTrabalho() == 30 || (aposentado.getIdade() == 60 && aposentado.TempoDeTrabalho() == 25);
+			
+		
+		
+	}
+
+	
+
+}
