@@ -1,0 +1,48 @@
+package com.br.Empregados;
+
+public class Empregado {
+    private String nome;
+	private int anoIngresso;
+    private int idade;
+    private int iD;
+
+    public Empregado(){
+    	
+    }
+    public Empregado(String nome,int idade,int anoIngresso,int iD){
+    	setNome(nome);
+    	setIdade(idade);
+    	setAnoIngresso(anoIngresso);
+    	setID(iD);
+    	
+    }
+	public String getNome(){
+		return nome;
+	}
+	public void setNome(String nome){
+		this.nome = nome;
+	}
+    public int getIdade() {
+		return idade;
+	}
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
+	public int getAnoIngresso() {
+		return anoIngresso;
+	}
+	public void setAnoIngresso(int anoIngresso) {
+		this.anoIngresso = anoIngresso;
+	}
+	public int getiD() {
+		return iD;
+	}
+	public void setID(int iD) {
+		this.iD = iD;
+	}
+	public int TempoDeTrabalho(){
+		int anoAtual = 2015;
+		return anoAtual - this.anoIngresso;
+		
+	}
+}
