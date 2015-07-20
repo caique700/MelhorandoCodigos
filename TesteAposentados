@@ -1,0 +1,35 @@
+/*Ex. 03
+Uma empresa quer verificar se um empregado está qualificado para a aposentadoria ou não, dado
+seu código de empregado, seu ano de nascimento e o ano de seu ingresso na empresa. Para estar
+em condições, um dos seguintes requisitos deve ser satisfeito:
+- Ter no mínimo 65 anos de idade.
+- Ter trabalhado no mínimo 30 anos.
+- Ter no mínimo 60 anos e ter trabalhado no mínimo 25 anos.
+Com base nas informações acima, faça um algoritmo que deverá escrever a idade e o tempo de trabalho 
+do empregado e a mensagem 'Requerer aposentadoria' ou 'Não requerer'.*/
+
+package com.br.Empregados;
+
+import javax.swing.JOptionPane;
+
+
+public class TestesAposentados {
+	public static void main(String[] args) {
+		Aposentadoria aposentado = new Aposentadoria();
+		aposentado.setEmpregado(new Empregado("João",65,1995,444444));
+		aposentado.setEmpregado(new Empregado("Maria",55,1985,444445));
+		aposentado.setEmpregado(new Empregado("Paulo",60,1990,444446));
+		aposentado.setEmpregado(new Empregado("Legolas",55,1995,444447));
+		
+		
+		int iD = Integer.parseInt(JOptionPane.showInputDialog("Digite o id do empregado"));
+		aposentado.verificaId(iD);
+		
+		boolean verifica = aposentado.ListaEmpregados(iD);
+		
+		if(verifica)
+			System.out.println("Requer Aposentadoria");
+		else
+			System.out.println("Não requer aposentadoria");
+	}
+}
