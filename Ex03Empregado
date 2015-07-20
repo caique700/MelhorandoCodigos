@@ -1,3 +1,13 @@
+/*Ex. 03
+Uma empresa quer verificar se um empregado está qualificado para a aposentadoria ou não, dado
+seu código de empregado, seu ano de nascimento e o ano de seu ingresso na empresa. Para estar
+em condições, um dos seguintes requisitos deve ser satisfeito:
+- Ter no mínimo 65 anos de idade.
+- Ter trabalhado no mínimo 30 anos.
+- Ter no mínimo 60 anos e ter trabalhado no mínimo 25 anos.
+Com base nas informações acima, faça um algoritmo que deverá escrever a idade e o tempo de trabalho 
+do empregado e a mensagem 'Requerer aposentadoria' ou 'Não requerer'.*/
+
 package com.br.Empregados;
 
 public class Empregado {
