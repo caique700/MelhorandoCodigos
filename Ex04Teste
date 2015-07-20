@@ -1,0 +1,33 @@
+/*Ex. 04
+Uma loja está levantando o valor total de todas as mercadorias em estoque. Escreva um algoritmo que permita a 
+entrada das seguintes informações: 
+a) o número total de mercadorias no estoque; 
+b) o valor de cada mercadoria. Ao final imprimir o valor total em estoque e a média de valor das mercadorias.*/
+
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
+
+public class TesteEstoque {
+    public static void main(String[] args) {
+    	double total = 0.0;
+    	double media = 0.0;
+    	int i = Integer.parseInt(JOptionPane.showInputDialog("Quantos tipos de produto você quer adicionar"));
+    	ArrayList<Estoque> mercadoria = new ArrayList<Estoque>();
+    	while(i > 0){
+    	    Estoque estoque = new Estoque();
+    	    estoque.setNome(JOptionPane.showInputDialog("Qual o nome do produto ?"));
+    	    estoque.setQuantidade(Integer.parseInt(JOptionPane.showInputDialog("Quantidade de produtos")));
+    	    estoque.setValorUnidade(Double.parseDouble(JOptionPane.showInputDialog("Valor da Unidade de cada Produto")));
+    	    mercadoria.add(estoque);
+    	    i--;
+    	}
+    	for(int j = 0;j < mercadoria.size();j++){
+    		total += mercadoria.get(j).valorTotal();
+    		
+    	}
+    	media = total / mercadoria.size();
+        System.out.println("O valor total de todas as mercadorias é: " + total + "\nA média de valores de produtos é " + media);    
+    }
+}
